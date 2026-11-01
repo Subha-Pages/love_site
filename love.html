@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>love</title>
+    <link rel="stylesheet" href="love.css">
+</head>
+<body>
+    <p>Do you love me?</p>
+    <form id="form">
+        <input type="radio" name="love" id="yes" value="Yes"><p id="yes_button">Yes</p>
+        <input type="radio" name="love" id="no" value="No"><p id="no_button">No</p>
+        <button id="sub" type="submit">Submit</button>
+    </form>
+    <p id="Yes"></p>
+    <script>
+        document.getElementById("sub").addEventListener("click",function (event){
+            event.preventDefault();
+            let selectedLove = document.querySelector('input[name="love"]:checked');
+            let c;
+            switch (selectedLove.value) {
+                case "Yes":
+                    c="I know this, I love you";
+                    break;
+                case "No":
+                    c="You are a bad girl"
+            
+                default:
+                    break;
+            }
+            document.getElementById("Yes").textContent=c
+        })
+    </script>
+</body>
+</html>
